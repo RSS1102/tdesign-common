@@ -105,3 +105,9 @@ Connects parent nodes in the tree with their child nodes at the same level. This
 ### Virtual Scrolling
 
 {{ vscroll }}
+
+## FAQ
+
+### Why can't the parent ID be obtained in `valueMode = 'all'` mode?
+
+In `valueMode = 'all'` mode, the parent node will only appear in the selected values if all its child nodes are selected.

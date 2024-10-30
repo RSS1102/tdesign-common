@@ -109,3 +109,9 @@ spline: data
 ### 虚拟滚动
 
 {{ vscroll }}
+
+## FAQ
+
+### 为什么 `valueMode = 'all'`模式下，获取不到父级的 id ?
+
+在 `valueMode = 'all'` 模式下,必须当前子节点被全部选中后,父节点才会出现在选中值里面。
