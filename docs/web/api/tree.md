@@ -112,6 +112,6 @@ spline: data
 
 ## FAQ
 
-### 为什么 `valueMode = 'all'`模式下，选中子节点的时候onChange回调并没有返回父节点的值？
+### 为什么在 `valueMode = 'all'` 模式下，选中子节点时 `onChange` 回调并没有返回父节点的值？
 
 在 `valueMode = 'all'` 模式下,必须当前子节点被全部选中后,父节点才会出现在选中值里面。

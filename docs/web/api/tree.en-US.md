@@ -108,6 +108,6 @@ Connects parent nodes in the tree with their child nodes at the same level. This
 
 ## FAQ
 
-### Why can't the parent ID be obtained in `valueMode = 'all'` mode?
+### Why doesn't the `onChange` callback return the value of the parent node when child node is selected in `valueMode = 'all'` mode?
 
 In `valueMode = 'all'` mode, the parent node will only appear in the selected values if all its child nodes are selected.
