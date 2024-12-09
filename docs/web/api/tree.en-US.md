@@ -111,3 +111,11 @@ Connects parent nodes in the tree with their child nodes at the same level. This
 ### Why doesn't the `onChange` callback return the value of the parent node when child node is selected in `valueMode = 'all'` mode?
 
 In `valueMode = 'all'` mode, the parent node will only appear in the selected values if all its child nodes are selected.
+
+### Why do other nodes get selected when I select a node?
+
+The `value` field of each item in the `data` array provided to the `Tree` component must be unique to avoid multiple selection issues caused by duplicate indices.
+
+### Why can't I expand nodes correctly even though I set `expanded`?
+
+The `value` field of each item in the `data` array provided to the `Tree` component must be unique to avoid incorrect expansion caused by duplicate indices.
