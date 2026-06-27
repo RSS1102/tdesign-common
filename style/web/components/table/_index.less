@@ -949,6 +949,24 @@
   .@{prefix}-table__cell--fixed-left,
   .@{prefix}-table__cell--fixed-right {
     position: sticky;
+
+    // 修复：当 row-class-name 搭配非 scoped CSS 设置 td background-color 时，
+    // 固定列 td 的 background-color: inherit 被覆盖，导致其背景不再是纯白色，
+    // 无法有效遮挡横向滚动的中间列内容，文字重叠到固定列上。
+    // https://github.com/Tencent/tdesign-vue-next/issues/6037
+    // 通过 ::before 伪元素提供不透明背景层，确保固定列始终能遮挡滚动内容。
+    // z-index: -1 使伪元素在 td 内容之下，但在非固定单元格之上
+    // （因为 td 本身 z-index: 30/31，整个 td 及其子元素都在该 stacking context 中）。
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: @table-bg;
+      z-index: -1;
+    }
   }
 
   .@{prefix}-table__cell--fixed-left {
